@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 54" fill="none">
+  <!-- Icon mark -->
+  <!-- Orange upward chevron / bow shape -->
+  <polygon points="22,6 30,20 14,20" fill="#F47920"/>
+  <polygon points="22,13 28,24 16,24" fill="#d96818" opacity="0.4"/>
+
+  <!-- Blue wave lines (ocean) -->
+  <path d="M8,31 Q12,27 16,31 Q20,35 24,31 Q28,27 32,31 Q36,35 38,31" stroke="#1B72B8" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+  <path d="M10,37 Q14,33 18,37 Q22,41 26,37 Q30,33 34,37 Q37,40 38,37" stroke="#7EC8E3" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+  <path d="M12,43 Q15,40 18,43 Q22,46 26,43 Q29,40 32,43" stroke="#1B72B8" stroke-width="1.1" fill="none" stroke-linecap="round" opacity="0.6"/>
+
+  <!-- Wordmark -->
+  <text x="50" y="25" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="15.5" font-weight="700" fill="#ffffff" letter-spacing="2.2">TAYLOR ENGINEERING</text>
+  <text x="51" y="40" font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif" font-size="9" font-weight="400" fill="rgba(255,255,255,0.58)" letter-spacing="3.5">AGENCIES LIMITED</text>
+</svg>
