@@ -8,8 +8,14 @@ const team = [
   {
     initials: 'AT',
     name: 'Andrew Taylor',
-    role: 'Senior Surveyor & Operations Manager',
+    role: 'Operations Manager & Lead Surveyor',
     bio: 'Third-generation member of the Taylor family and a UK MCA Master Mariner Unlimited. Andrew brings international maritime credentials and operational leadership to TEAL\'s expanding regional portfolio.',
+  },
+  {
+    initials: 'AL',
+    name: 'Amanda Llanos',
+    role: 'Financial Manager',
+    bio: 'Amanda oversees the financial operations of Taylor Engineering Agencies Limited, ensuring the firm\'s continued stability and supporting its growth across the Caribbean region.',
   },
   {
     initials: 'ST',

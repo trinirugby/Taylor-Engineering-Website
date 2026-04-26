@@ -45,8 +45,10 @@ export default function Footer() {
           {/* Contact column */}
           <div>
             <p className="footer__col-title">Contact</p>
-            <p className="footer__contact-line">+1 (868) 000-0000</p>
-            <p className="footer__contact-line">info@taylorengineering.com</p>
+            <p className="footer__contact-line">+1 (868) 361-2289</p>
+            <p className="footer__contact-line">+1 (868) 361-2284</p>
+            <p className="footer__contact-line">+1 (868) 293-9779</p>
+            <p className="footer__contact-line">mail@tayeng.com</p>
             <p className="footer__contact-line">
               Port of Spain,<br />Trinidad and Tobago
             </p>

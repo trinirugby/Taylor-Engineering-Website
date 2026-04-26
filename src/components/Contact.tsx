@@ -76,8 +76,11 @@ export default function Contact() {
               <div className="contact__detail-icon">📞</div>
               <div>
                 <div className="contact__detail-label">Phone</div>
-                {/* PLACEHOLDER — replace before go-live */}
-                <div className="contact__detail-value">+1 (868) 000-0000</div>
+                <div className="contact__detail-value">
+                  +1 (868) 361-2289<br />
+                  +1 (868) 361-2284<br />
+                  +1 (868) 293-9779
+                </div>
               </div>
             </div>
 
@@ -85,8 +88,7 @@ export default function Contact() {
               <div className="contact__detail-icon">✉️</div>
               <div>
                 <div className="contact__detail-label">Email</div>
-                {/* PLACEHOLDER — replace before go-live */}
-                <div className="contact__detail-value">info@taylorengineering.com</div>
+                <div className="contact__detail-value">mail@tayeng.com</div>
               </div>
             </div>
 
@@ -94,7 +96,6 @@ export default function Contact() {
               <div className="contact__detail-icon">📍</div>
               <div>
                 <div className="contact__detail-label">Address</div>
-                {/* PLACEHOLDER — confirm full address with Andrew Taylor */}
                 <div className="contact__detail-value">Port of Spain, Trinidad and Tobago</div>
               </div>
             </div>
