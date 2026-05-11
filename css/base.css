@@ -242,12 +242,11 @@ button { font-family: inherit; cursor: pointer; }
 .page-hero__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to right,
-    rgba(10,22,40,0.92) 0%,
-    rgba(10,22,40,0.72) 55%,
-    rgba(10,22,40,0.38) 100%
-  );
+  background: transparent;
+}
+
+.page-hero__content .eyebrow {
+  text-shadow: 0 2px 10px rgba(0,0,0,0.65);
 }
 
 .page-hero__content {
@@ -270,14 +269,16 @@ button { font-family: inherit; cursor: pointer; }
   margin-top: 0.75rem;
   margin-bottom: 1rem;
   line-height: 1.2;
+  text-shadow: 0 2px 14px rgba(0,0,0,0.7);
 }
 
 .page-hero .hero__lead {
   font-size: 1.0625rem;
-  color: rgba(255,255,255,0.72);
+  color: var(--white);
   line-height: 1.7;
   max-width: 56ch;
   margin: 0 auto;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.7);
 }
 
 /* ── 8. CONTACT CTA BANNER (used on every page) ──────────────── */

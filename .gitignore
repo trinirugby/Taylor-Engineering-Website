@@ -19,3 +19,6 @@ yarn-debug.log*
 # Claude Code internals
 .superpowers/
 .claude/
+
+# Local Netlify folder
+.netlify
