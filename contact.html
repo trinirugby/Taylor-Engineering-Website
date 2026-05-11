@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact | Taylor Engineering Agencies Limited</title>
+  <meta name="description" content="Request a marine survey or send an enquiry to Taylor Engineering Agencies Limited. Serving Trinidad, Guyana, and the Eastern Caribbean.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@400;500;600&display=swap">
+
+  <link rel="preload" as="image" href="/assets/optimized/contact-ship-1600.avif" type="image/avif" fetchpriority="high">
+
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/contact.css">
+  <link rel="icon" href="/assets/images/logo.svg" type="image/svg+xml">
+</head>
+<body>
+  <header data-include="/partials/nav.html"></header>
+
+  <main>
+    <!-- ─────────── PAGE HERO ─────────── -->
+    <section class="page-hero" style="background-image: url('/assets/optimized/contact-ship-1600.jpg'); background-position: center 40%;">
+      <div class="page-hero__overlay" aria-hidden="true"></div>
+      <div class="container">
+        <div class="page-hero__content">
+          <p class="eyebrow">Get In Touch</p>
+          <h1 class="page-hero__title">Request a Survey or Send an Enquiry</h1>
+          <p class="hero__lead">Our team responds promptly to all survey requests across the Caribbean region.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─────────── CONTACT ─────────── -->
+    <section id="contact" class="contact section">
+      <div class="container">
+        <!-- Success banner (shown after Netlify redirect with ?success=1) -->
+        <div id="contact-success" class="banner banner--success" style="display:none; margin-bottom: 2rem; border-radius: var(--radius-sm);">
+          Thank you — your enquiry has been received. We&rsquo;ll be in touch shortly.
+        </div>
+
+        <div class="contact__grid">
+          <!-- Contact details -->
+          <div>
+            <p class="eyebrow">Get In Touch</p>
+            <h2 class="section-title">Request a Survey or Enquiry</h2>
+            <div class="divider"></div>
+            <p class="section-lead" style="margin-bottom: 2rem;">
+              Our team is available to mobilise across Trinidad, Guyana, and the Eastern
+              Caribbean. Reach us by phone, email, or using the form.
+            </p>
+
+            <div class="contact__detail">
+              <div class="contact__detail-icon" aria-hidden="true">&#128222;</div>
+              <div>
+                <div class="contact__detail-label">Phone</div>
+                <div class="contact__detail-value">
+                  <a href="tel:+18683612289">+1 (868) 361-2289</a><br>
+                  <a href="tel:+18683612284">+1 (868) 361-2284</a><br>
+                  <a href="tel:+18682939779">+1 (868) 293-9779</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact__detail">
+              <div class="contact__detail-icon" aria-hidden="true">&#9993;</div>
+              <div>
+                <div class="contact__detail-label">Email</div>
+                <div class="contact__detail-value">
+                  <a href="mailto:mail@tayeng.com">mail@tayeng.com</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact__detail">
+              <div class="contact__detail-icon" aria-hidden="true">&#128205;</div>
+              <div>
+                <div class="contact__detail-label">Address</div>
+                <div class="contact__detail-value">Port of Spain, Trinidad and Tobago</div>
+              </div>
+            </div>
+
+            <div class="contact__photo-wrap">
+              <picture>
+                <source type="image/avif" srcset="/assets/optimized/contact-ship-1600.avif 1600w, /assets/optimized/contact-ship-800.avif 800w" sizes="(max-width: 768px) 100vw, 40vw">
+                <source type="image/webp" srcset="/assets/optimized/contact-ship-1600.webp 1600w, /assets/optimized/contact-ship-800.webp 800w" sizes="(max-width: 768px) 100vw, 40vw">
+                <img src="/assets/optimized/contact-ship-1600.jpg" alt="Container ship at port" width="1600" height="800" loading="lazy" decoding="async">
+              </picture>
+            </div>
+          </div>
+
+          <!-- Contact form (Netlify Forms) -->
+          <div class="contact__form">
+            <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/contact.html?success=1" novalidate>
+              <!-- Required by Netlify's POST handler -->
+              <input type="hidden" name="form-name" value="contact">
+
+              <!-- Honeypot — humans won't fill this; bots usually will -->
+              <p class="form-honey">
+                <label>Don&rsquo;t fill this out if you&rsquo;re human: <input name="bot-field"></label>
+              </p>
+
+              <!-- Subject reflects selected service: "Website Inquiry - {service}" -->
+              <input type="hidden" name="subject" id="subject" value="Website Inquiry - General Enquiry">
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="firstName">First Name</label>
+                  <input id="firstName" name="firstName" type="text" placeholder="Paul" autocomplete="given-name">
+                </div>
+                <div class="form-group">
+                  <label for="lastName">Last Name</label>
+                  <input id="lastName" name="lastName" type="text" placeholder="Taylor" autocomplete="family-name">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email Address <span style="color: var(--gold);">*</span></label>
+                <input id="email" name="email" type="email" placeholder="you@company.com" required autocomplete="email">
+              </div>
+
+              <div class="form-group">
+                <label for="company">Company / Organisation</label>
+                <input id="company" name="company" type="text" placeholder="Shipping Co. Ltd." autocomplete="organization">
+              </div>
+
+              <div class="form-group">
+                <label for="service">Service Required</label>
+                <select id="service" name="service">
+                  <option value="General Enquiry">General Enquiry</option>
+                  <option value="Marine Assurance &amp; Compliance">Marine Assurance &amp; Compliance</option>
+                  <option value="Cargo Operations &amp; Loadout Oversight">Cargo Operations &amp; Loadout Oversight</option>
+                  <option value="Hull &amp; Machinery Survey">Hull &amp; Machinery Survey</option>
+                  <option value="P&amp;I &amp; Cargo Survey">P&amp;I &amp; Cargo Survey</option>
+                  <option value="Tank Cleaning &amp; Inspection">Tank Cleaning &amp; Inspection</option>
+                  <option value="Marine Consultancy &amp; Claims">Marine Consultancy &amp; Claims</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Describe your survey requirements, vessel details, location, or any other relevant information…"></textarea>
+              </div>
+
+              <div class="form-submit">
+                <button type="submit" class="btn btn-primary">Send Enquiry</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer data-include="/partials/footer.html"></footer>
+
+  <script>
+    // Subject prefix: "Website Inquiry - {selected service}"
+    (function () {
+      var sel = document.getElementById('service');
+      var subj = document.getElementById('subject');
+      function sync() {
+        // Use the option's text (decoded) so subject reads cleanly in email
+        var opt = sel.options[sel.selectedIndex];
+        subj.value = 'Website Inquiry - ' + (opt ? opt.text : 'General Enquiry');
+      }
+      if (sel && subj) { sel.addEventListener('change', sync); sync(); }
+
+      if (new URLSearchParams(location.search).get('success') === '1') {
+        var b = document.getElementById('contact-success');
+        if (b) {
+          b.style.display = 'block';
+          b.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }
+    })();
+  </script>
+  <script src="/js/main.js" defer></script>
+</body>
+</html>
