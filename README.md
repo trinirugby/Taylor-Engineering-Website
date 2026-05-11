@@ -1,36 +1,105 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Taylor Engineering Agencies Limited — Website
 
-## Getting Started
+Static marketing site for Taylor Engineering Agencies Limited (marine surveying & consultancy, Trinidad & Tobago, est. 1984).
 
-First, run the development server:
+**Live:** https://gleaming-pothos-8f5b10.netlify.app/
+**Stack:** Plain HTML5 + CSS3 + vanilla JS. No build step. Deployed on Netlify.
+
+---
+
+## Run locally
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install        # only needed once (installs sharp for image optimization)
+npm run dev        # serves the site on http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+`npm run dev` shells out to `npx serve .` — no permanent dependency required.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Project layout
 
-## Learn More
+```
+/
+├── index.html        ← Home
+├── about.html        ← About + Our Story + Team
+├── services.html     ← Services
+├── coverage.html     ← Coverage
+├── contact.html      ← Contact (Netlify Forms)
+├── 404.html
+├── css/
+│   ├── base.css      ← tokens, reset, nav, footer, buttons, forms
+│   └── <page>.css    ← page-specific styles
+├── js/
+│   ├── main.js       ← partial-include loader + mobile-nav toggle
+│   └── …
+├── partials/
+│   ├── nav.html      ← shared nav (loaded via fetch)
+│   └── footer.html   ← shared footer (loaded via fetch)
+├── assets/
+│   ├── images/       ← original source images (committed)
+│   └── optimized/    ← AVIF + WebP + JPG @ 800w + 1600w (committed)
+├── scripts/
+│   └── optimize-images.mjs
+├── package.json
+├── netlify.toml
+└── README.md
+```
 
-To learn more about Next.js, take a look at the following resources:
+The shared nav and footer live in `partials/`. Each page includes them via:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```html
+<header data-include="/partials/nav.html"></header>
+…
+<footer data-include="/partials/footer.html"></footer>
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+`js/main.js` fetches and injects the partials on page load. Edit nav or footer in one place; all pages pick up the change.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Image optimization (fast hero loading)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Every hero / section-face image is served via `<picture>` with **AVIF + WebP** sources and a **JPG** fallback at 800w and 1600w. Above-the-fold heroes are preloaded (`<link rel="preload" as="image">`) and decoded with `fetchpriority="high"`.
+
+To add a new image:
+
+1. Drop the original into `assets/images/`.
+2. Run:
+   ```bash
+   npm run optimize                          # optimize every image in assets/images/
+   npm run optimize -- assets/images/foo.jpg # or just one
+   ```
+3. Reference it in HTML:
+   ```html
+   <picture>
+     <source type="image/avif" srcset="/assets/optimized/foo-1600.avif 1600w, /assets/optimized/foo-800.avif 800w" sizes="100vw">
+     <source type="image/webp" srcset="/assets/optimized/foo-1600.webp 1600w, /assets/optimized/foo-800.webp 800w" sizes="100vw">
+     <img src="/assets/optimized/foo-1600.jpg" alt="…" width="1600" height="900" loading="lazy" decoding="async">
+   </picture>
+   ```
+
+For above-the-fold heroes also add to `<head>`:
+```html
+<link rel="preload" as="image" href="/assets/optimized/foo-1600.avif" type="image/avif" fetchpriority="high">
+```
+…and use `loading="eager" fetchpriority="high"` on the `<img>`.
+
+---
+
+## Contact form (Netlify Forms)
+
+`contact.html` posts to Netlify Forms — no third-party service needed. Submissions show up in the Netlify dashboard under **Forms**. The email subject of every submission begins with `Website Inquiry - {selected service}`.
+
+To enable Netlify form notifications by email: Netlify dashboard → Site → Forms → Form notifications → add an email recipient.
+
+---
+
+## Deploy
+
+This repo is Netlify-deployable as-is. `netlify.toml` configures:
+- `publish = "."` — serve files straight from the repo root.
+- Long cache headers on `/assets/optimized/`, `/assets/images/`, `/css/`, `/js/`.
+
+Push to `main` → Netlify auto-deploys.

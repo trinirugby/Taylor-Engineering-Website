@@ -1,26 +1,12 @@
 {
-  "name": "tayeng",
-  "version": "0.1.0",
+  "name": "taylor-engineering-website",
   "private": true,
+  "description": "Static website for Taylor Engineering Agencies Limited (marine surveying, Trinidad & Tobago).",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint"
-  },
-  "dependencies": {
-    "@wix/forms": "^1.0.428",
-    "@wix/sdk": "^1.21.5",
-    "next": "16.2.3",
-    "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "dev": "npx --yes serve@latest .",
+    "optimize": "node scripts/optimize-images.mjs"
   },
   "devDependencies": {
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "16.2.3",
-    "typescript": "^5"
+    "sharp": "^0.33.5"
   }
 }
