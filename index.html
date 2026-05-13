@@ -15,7 +15,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@400;500;600&display=swap">
 
-  <link rel="preload" as="image" href="/assets/optimized/hero-bg-1600.avif" type="image/avif" fetchpriority="high">
+  <link rel="preload" as="image" type="image/avif"
+        imagesrcset="/assets/optimized/hero-bg-2400.avif 2400w, /assets/optimized/hero-bg-1600.avif 1600w, /assets/optimized/hero-bg-800.avif 800w"
+        imagesizes="100vw" fetchpriority="high">
   <link rel="preload" as="image" href="/assets/images/logo-wordmark.png" fetchpriority="high">
 
   <link rel="stylesheet" href="/css/base.css">
@@ -30,9 +32,12 @@
     <section id="hero" class="hero">
       <div class="hero__bg" aria-hidden="true">
         <picture>
-          <source type="image/avif" srcset="/assets/optimized/hero-bg-1600.avif 1600w, /assets/optimized/hero-bg-800.avif 800w" sizes="100vw">
-          <source type="image/webp" srcset="/assets/optimized/hero-bg-1600.webp 1600w, /assets/optimized/hero-bg-800.webp 800w" sizes="100vw">
-          <img src="/assets/optimized/hero-bg-1600.jpg" alt="" width="1600" height="1067" fetchpriority="high" decoding="async">
+          <source type="image/avif" srcset="/assets/optimized/hero-bg-2400.avif 2400w, /assets/optimized/hero-bg-1600.avif 1600w, /assets/optimized/hero-bg-800.avif 800w" sizes="100vw">
+          <source type="image/webp" srcset="/assets/optimized/hero-bg-2400.webp 2400w, /assets/optimized/hero-bg-1600.webp 1600w, /assets/optimized/hero-bg-800.webp 800w" sizes="100vw">
+          <img src="/assets/optimized/hero-bg-1600.jpg"
+               srcset="/assets/optimized/hero-bg-2400.jpg 2400w, /assets/optimized/hero-bg-1600.jpg 1600w, /assets/optimized/hero-bg-800.jpg 800w"
+               sizes="100vw"
+               alt="" width="2400" height="1348" fetchpriority="high" decoding="async">
         </picture>
       </div>
       <div class="hero__overlay" aria-hidden="true"></div>

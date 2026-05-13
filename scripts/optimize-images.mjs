@@ -17,7 +17,7 @@ import sharp from "sharp";
 const ROOT = resolve(process.cwd());
 const SRC_DIR = join(ROOT, "assets", "images");
 const OUT_DIR = join(ROOT, "assets", "optimized");
-const WIDTHS = [800, 1600];
+const WIDTHS = [800, 1600, 2400];
 const SUPPORTED = new Set([".jpg", ".jpeg", ".png"]);
 
 async function listInputs(args) {
@@ -39,11 +39,11 @@ async function optimizeOne(inputPath) {
     const base = sharp(inputPath).resize({ width: w, withoutEnlargement: true });
 
     await Promise.all([
-      base.clone().avif({ quality: 50, effort: 4 })
+      base.clone().avif({ quality: 62, effort: 5, chromaSubsampling: "4:4:4" })
         .toFile(join(OUT_DIR, `${name}-${w}.avif`)),
-      base.clone().webp({ quality: 75, effort: 4 })
+      base.clone().webp({ quality: 84, effort: 5 })
         .toFile(join(OUT_DIR, `${name}-${w}.webp`)),
-      base.clone().jpeg({ quality: 80, mozjpeg: true })
+      base.clone().jpeg({ quality: 86, mozjpeg: true, chromaSubsampling: "4:4:4" })
         .toFile(join(OUT_DIR, `${name}-${w}.jpg`)),
     ]);
 
