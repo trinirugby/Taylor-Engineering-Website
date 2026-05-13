@@ -211,7 +211,7 @@
   }
   .hero__content { padding: 1.5rem 1.25rem 2rem; }
   .hero__wordmark { margin: 0 0 -10px; }
-  .hero__wordmark-image { height: clamp(140px, 26vh, 200px); }
+  .hero__wordmark-image { height: clamp(190px, 34vh, 260px); }
   .hero__rule { margin: 0.75rem 0; }
   .hero__lead {
     font-size: 1rem;
@@ -241,12 +241,12 @@
 
 @media (max-width: 480px) {
   .hero__content { padding: 1.25rem 1rem 1.75rem; }
-  .hero__wordmark-image { height: clamp(130px, 24vh, 170px); }
+  .hero__wordmark-image { height: clamp(170px, 32vh, 220px); }
   .hero__lead { font-size: 0.95rem; max-width: 28ch; }
 }
 
 @media (max-width: 380px) {
   .hero__content { padding: 1rem 0.875rem 1.5rem; }
-  .hero__wordmark-image { height: clamp(115px, 22vh, 150px); }
+  .hero__wordmark-image { height: clamp(150px, 30vh, 190px); }
   .hero__ctas .btn { min-width: 200px; padding: 0.8125rem 1.5rem; }
 }

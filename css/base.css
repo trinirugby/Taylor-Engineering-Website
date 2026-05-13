@@ -163,21 +163,6 @@ button { font-family: inherit; cursor: pointer; }
   padding-top: 16px;
 }
 
-.nav__brand {
-  display: none;
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  align-items: center;
-  height: 38px;
-}
-.nav__brand-mark {
-  height: 38px;
-  width: 32px;
-  display: block;
-}
-
 .nav__links {
   display: flex;
   align-items: center;
@@ -519,13 +504,23 @@ button { font-family: inherit; cursor: pointer; }
   .show-on-mobile { display: block; }
 
   .nav { background: rgba(10, 22, 40, 0.85); }
-  .nav__inner { justify-content: space-between; padding-top: 0; }
-  .nav__brand { display: flex; position: static; transform: none; }
   .nav__links { display: none; }
-  .nav__hamburger { display: flex; position: static; transform: none; }
+  .nav__hamburger { display: flex; }
 
-  .page-hero { min-height: auto; }
-  .page-hero__content { padding: 3rem 0 2.5rem; }
+  .page-hero {
+    min-height: 70vh;
+    justify-content: center;
+  }
+  .page-hero__overlay {
+    background: linear-gradient(180deg,
+      rgba(0,0,0,0.55) 0%,
+      rgba(0,0,0,0.25) 35%,
+      rgba(0,0,0,0.30) 65%,
+      rgba(0,0,0,0.60) 100%);
+  }
+  .page-hero__content { padding: 2rem 1.25rem 2.5rem; }
+  .page-hero__title { font-size: clamp(1.875rem, 7.5vw, 2.5rem); margin-top: 1rem; }
+  .page-hero .hero__lead { font-size: 1rem; line-height: 1.6; max-width: 32ch; }
 
   .contact-cta { padding: 2.75rem 0; }
   .contact-cta__inner { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
@@ -543,7 +538,10 @@ button { font-family: inherit; cursor: pointer; }
 @media (max-width: 480px) {
   .container { padding: 0 1.25rem; }
   .section { padding: 3.5rem 0; }
-  .page-hero__content { padding: 2.5rem 0 2rem; }
+  .page-hero { min-height: 65vh; }
+  .page-hero__content { padding: 1.75rem 1rem 2rem; }
+  .page-hero__title { font-size: clamp(1.75rem, 7vw, 2.25rem); }
+  .page-hero .hero__lead { font-size: 0.95rem; max-width: 30ch; }
 }
 
 /* Ultra-narrow phones (iPhone SE, small Android) */
