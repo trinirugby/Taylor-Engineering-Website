@@ -93,3 +93,14 @@
 @media (max-width: 768px) {
   .coverage__grid { grid-template-columns: 1fr; gap: 2rem; }
 }
+
+@media (max-width: 480px) {
+  .coverage__grid { gap: 1.5rem; }
+  .coverage__region { padding: 0.875rem 0; gap: 0.75rem; }
+  .coverage__region-name { font-size: 1rem; }
+  .coverage__region-desc { font-size: 0.8125rem; line-height: 1.5; }
+  .callout { padding: 0.875rem 1rem; }
+  .callout__title { font-size: 0.9375rem; }
+  .callout__text { font-size: 0.8125rem; }
+  .coverage__photo-wrap { height: 180px; margin-top: 1.25rem; }
+}

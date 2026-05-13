@@ -197,38 +197,56 @@
 }
 
 @media (max-width: 768px) {
-  .hero { min-height: auto; }
-  .hero__content { padding: 2.5rem 1.25rem 2rem; }
+  .hero {
+    min-height: 85vh;
+    justify-content: center;
+  }
+  .hero__bg img { object-position: center 60%; }
+  .hero__overlay {
+    background: linear-gradient(180deg,
+      rgba(0,0,0,0.55) 0%,
+      rgba(0,0,0,0.25) 35%,
+      rgba(0,0,0,0.30) 65%,
+      rgba(0,0,0,0.60) 100%);
+  }
+  .hero__content { padding: 1.5rem 1.25rem 2rem; }
   .hero__wordmark { margin: 0 0 -10px; }
-  .hero__wordmark-image { height: clamp(120px, 22vh, 160px); }
-  .hero__rule { margin: 0.5rem 0; }
+  .hero__wordmark-image { height: clamp(140px, 26vh, 200px); }
+  .hero__rule { margin: 0.75rem 0; }
   .hero__lead {
-    font-size: 0.95rem;
-    line-height: 1.55;
-    margin: 0 auto 1.25rem;
-    max-width: 32ch;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0 auto 1.5rem;
+    max-width: 30ch;
   }
   .hero__ctas {
-    width: 100%;
-    max-width: 320px;
+    width: auto;
+    max-width: 280px;
     margin: 0 auto;
     flex-direction: column;
-    align-items: stretch;
+    align-items: center;
     gap: 0.75rem;
   }
-  .hero__ctas .btn { justify-content: center; padding: 0.75rem 1.25rem; }
+  .hero__ctas .btn {
+    justify-content: center;
+    padding: 0.875rem 1.75rem;
+    font-size: 0.95rem;
+    letter-spacing: 0.04em;
+    min-width: 220px;
+  }
 
   .services__grid    { grid-template-columns: 1fr; }
   .why__grid         { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 480px) {
-  .hero__content { padding: 2rem 1rem 1.75rem; }
-  .hero__wordmark-image { height: clamp(110px, 20vh, 140px); }
-  .hero__lead { font-size: 0.9rem; }
+  .hero__content { padding: 1.25rem 1rem 1.75rem; }
+  .hero__wordmark-image { height: clamp(130px, 24vh, 170px); }
+  .hero__lead { font-size: 0.95rem; max-width: 28ch; }
 }
 
 @media (max-width: 380px) {
-  .hero__content { padding: 1.75rem 0.875rem 1.5rem; }
-  .hero__wordmark-image { height: clamp(100px, 18vh, 125px); }
+  .hero__content { padding: 1rem 0.875rem 1.5rem; }
+  .hero__wordmark-image { height: clamp(115px, 22vh, 150px); }
+  .hero__ctas .btn { min-width: 200px; padding: 0.8125rem 1.5rem; }
 }
