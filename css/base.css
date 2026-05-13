@@ -231,10 +231,10 @@ button { font-family: inherit; cursor: pointer; }
 .page-hero {
   position: relative;
   margin-top: calc(-1 * var(--nav-height));
-  min-height: 60vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   background-size: cover;
   background-position: center;
 }
@@ -501,7 +501,7 @@ button { font-family: inherit; cursor: pointer; }
   .nav__links { display: none; }
   .nav__hamburger { display: flex; }
 
-  .page-hero { min-height: 48vh; }
+  .page-hero { min-height: 90vh; }
   .page-hero__content { padding: 6.5rem 0 4rem; }
 
   .contact-cta { padding: 2.75rem 0; }
