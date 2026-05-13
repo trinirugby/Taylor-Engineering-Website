@@ -504,6 +504,8 @@ button { font-family: inherit; cursor: pointer; }
   .show-on-mobile { display: block; }
 
   .nav { background: rgba(10, 22, 40, 0.85); }
+  .nav .container { height: 100%; }
+  .nav__inner { height: var(--nav-height); padding-top: 0; }
   .nav__links { display: none; }
   .nav__hamburger { display: flex; }
 
