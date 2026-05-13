@@ -118,3 +118,45 @@
 @media (max-width: 768px) {
   .services__grid { grid-template-columns: 1fr; }
 }
+
+/* ============================================================
+   STANDARDS & CONTROLS — "How We Work" block below services grid
+   ============================================================ */
+.standards__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.85rem 2.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-width: 980px;
+}
+
+.standards__list li {
+  position: relative;
+  padding-left: 1.25rem;
+  font-size: 1rem;
+  line-height: 1.55;
+  color: var(--ink, #1a2434);
+}
+
+.standards__list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+}
+
+.standards__list a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 768px) {
+  .standards__list { grid-template-columns: 1fr; }
+}
